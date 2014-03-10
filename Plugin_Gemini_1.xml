@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Plugin_Gemini_Config.xml - rename to Plugin_Gemini_1.xml (or _2, _3 for multiple etc.) and set Enabled to true-->
+<Config>
+  <!--Set Enabled to true to enable the plugin instance -->
+  <Enabled>false</Enabled>
+
+  <!--If this is enabled then logging information will be written to log.txt in the plugin directory-->
+  <EnableLog>false</EnableLog>
+
+  <!--The PureCM repository name -->
+  <PureCMRepository>Example</PureCMRepository>
+  
+  <!--The URL to the Gemini Service Manager -->
+  <GeminiURL>http://purecm.countersoft.net</GeminiURL>
+  
+  <!--The Gemini username -->
+  <GeminiUser>PureCM</GeminiUser>
+  
+  <!--The Gemini password -->
+  <GeminiPassword>secret</GeminiPassword>
+  
+  <!--The Gemini API Key -->
+  <GeminiAPIKey>gfd5afjqqm</GeminiAPIKey>
+  
+  <!--Number of seconds to wait between system checks -->
+  <Interval>60</Interval>
+
+  <!--If you want ot create Gemini projects from PureCM projects then set these parameters-->
+  <!--Otherwise just leave enabled to be false-->
+  <ProjectCreation>
+    <!--Whether to create Gemini projects from PureCM projects -->
+    <Enabled>true</Enabled>
+    <!--What Gemini project should new projects be based on? Schema templates, etc. -->
+    <!--Leave blank to use the first Gemini project. -->
+    <TemplateProject></TemplateProject>
+  </ProjectCreation>
+  
+  <!--If you want to create Gemini issues from PureCM tasks then set these parameters-->
+  <!--Otherwise just leave enabled to be false-->
+  <TaskCreation>
+    <!--Whether to create Gemini issues from PureCM tasks -->
+    <Enabled>false</Enabled>
+    <!--The type of created Gemini issue -->
+    <CreationType>Bug</CreationType>
+    <!--The status of created Gemini issue -->
+    <CreationStatus>Unassigned</CreationStatus>
+    <!--The severity of created Gemini issue -->
+    <CreationSeverity>Minor</CreationSeverity>
+  </TaskCreation>
+
+  <!--If you want to create Gemini issues from PureCM features then set these parameters-->
+  <!--Otherwise just leave enabled to be false-->
+  <FeatureCreation>
+    <!--Whether to create Gemini issues from PureCM features -->
+    <Enabled>false</Enabled>
+    <!--The type of created Gemini issue -->
+    <CreationType>New Feature</CreationType>
+    <!--The status of created Gemini issue -->
+    <CreationStatus>Unassigned</CreationStatus>
+    <!--The severity of created Gemini issue -->
+    <CreationSeverity>Minor</CreationSeverity>
+  </FeatureCreation>
+
+  <!--Update the PureCM task URLs to use the Gemini issue URLs -->
+  <UpdateURL>true</UpdateURL>
+
+  <!--Whether to forcibly synchronize all Gemini issues on startup - 'true' or 'false'-->
+  <!--This should only be set to true as a last resort and then reset back to false.-->
+  <!--Any PureCM task operations performed during this force sync will be reverted.-->
+  <ForceGeminiSync>false</ForceGeminiSync>
+
+  <!--Whether to forcibly synchronize all PureCM tasks on startup - 'true' or 'false'-->
+  <!--This should only be set to true as a last resort and then reset back to false.-->
+  <!--Any Gemini operations performed during this force sync will be reverted.-->
+  <ForcePureCMSync>false</ForcePureCMSync>  
+</Config>

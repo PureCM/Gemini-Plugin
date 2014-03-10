@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32150B88-7748-4EE4-915D-F3EACFF7047F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugin_Gemini</RootNamespace>
+    <AssemblyName>Plugin_Gemini</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CounterSoft.Gemini.Commons">
+      <HintPath>lib\CounterSoft.Gemini.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="CounterSoft.Gemini.WebServices">
+      <HintPath>lib\CounterSoft.Gemini.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\inc\VersionNo.cs">
+      <Link>VersionNo.cs</Link>
+    </Compile>
+    <Compile Include="External Items\ExFactory.cs" />
+    <Compile Include="External Items\ExTask.cs" />
+    <Compile Include="External Items\ExItem.cs" />
+    <Compile Include="External Items\ExMonitor.cs" />
+    <Compile Include="External Items\ExProject.cs" />
+    <Compile Include="External Items\ExProjectItem.cs" />
+    <Compile Include="External Items\ExUser.cs" />
+    <Compile Include="External Items\ExVersion.cs" />
+    <Compile Include="Gemini Items\GFactory.cs" />
+    <Compile Include="Gemini Items\GTask.cs" />
+    <Compile Include="Gemini Items\GMonitor.cs" />
+    <Compile Include="Gemini Items\GProject.cs" />
+    <Compile Include="Gemini Items\GUser.cs" />
+    <Compile Include="Gemini Items\GVersion.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Gemini Items\GOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PureCM Items\PCMFactory.cs" />
+    <Compile Include="PureCM Items\PCMMonitor.cs" />
+    <Compile Include="PureCM Items\PCMProject.cs" />
+    <Compile Include="PureCM Items\PCMTask.cs" />
+    <Compile Include="PureCM Items\PCMUser.cs" />
+    <Compile Include="PureCM Items\PCMVersion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PureCM.Client\PureCM.Client.csproj">
+      <Project>{026627FF-9F9D-4D2D-BA1E-CDF16517D142}</Project>
+      <Name>PureCM.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PureCM.Server\PureCM.Server.csproj">
+      <Project>{EBAF8A35-1B6D-4203-8981-E41D5E759DC3}</Project>
+      <Name>PureCM.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plugin_Gemini_1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
